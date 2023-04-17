@@ -1,0 +1,18 @@
+[package]
+name = "wasm_regex"
+version = "0.1.0"
+edition = "2018"
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+regex = "1"
+serde = { version = "1.0", features = ["derive"] }
+serde-wasm-bindgen = "0.3"
+
+[profile.release]
+lto = true
+opt-level = "z"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
