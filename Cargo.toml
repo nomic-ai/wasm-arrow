@@ -5,10 +5,12 @@ edition = "2018"
 crate-type = ["cdylib"]
 
 [dependencies]
-wasm-bindgen = "0.2"
-regex = "1"
-serde = { version = "1.0", features = ["derive"] }
-serde-wasm-bindgen = "0.3"
+regex = "1.5"
+js-sys = "0.3"
+
+[dependencies.wasm-bindgen]
+version = "0.2"
+features = ["serde-serialize"]
 
 [profile.release]
 lto = true

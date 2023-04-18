@@ -25,23 +25,20 @@
         "Fillmore",
         "Pierce",
         "Buchanan",
-      ]
-      const vector = new TextEncoder().encode(strings)
-      const offsets = [0]
+      ];
+      const vector = new TextEncoder().encode(strings.join(''));
+      const offsets = [0];
       for (let i = 0; i < strings.length; i++) {
-        offsets.push(offsets[i] + strings[i].length)
+        offsets.push(offsets[i] + strings[i].length);
       }
       const regex = "a";
 
-      const data = {
-        vector: Array.from(vector),
-        offsets,
-      };
-
-      const result = await count_regex_matches(data, regex);
+      const result = count_regex_matches(vector, offsets, regex);
 
       const matches = new Float32Array(result);
-      console.log(matches); // Output
+      for (let president of strings) {
+        console.log(president, matches[strings.indexOf(president)])
+      }
     }
 
     main();
@@ -50,5 +47,6 @@
 
 <body>
   <h1>Rust WASM Regex Example</h1>
-
 </body>
+
+</html>
