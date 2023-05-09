@@ -1,8 +1,11 @@
 [package]
 name = "wasm_regex"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2018"
 crate-type = ["cdylib"]
+license = "MIT"
+repository = "https://github.com/nomic-ai/wasm-arrow"
+description = "WASM implementation of regex for Arrow UTF8 data"
 
 [dependencies]
 regex = "1.5"
