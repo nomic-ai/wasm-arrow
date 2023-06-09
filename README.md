@@ -1,4 +1,8 @@
-# Rust regex in wasm
+# Warmbat
+
+## Web-assembly rust module for batchwise arrow transformations
+
+<img width="546" alt="image" src="https://github.com/nomic-ai/wasm-arrow/assets/1110758/2a4e8592-3af0-4d29-b96b-5c6c9d581b2a">
 
 I have been looking for a fast regular expression library in Javascript that runs on Apache 
 Arrow for a few years. Arrow uses UTF-8 encoded strings, and the standard ways of decoding
